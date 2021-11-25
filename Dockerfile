@@ -25,7 +25,7 @@ WORKDIR $APPS_HOME
 ENV APP_NAME=taxon-tools
 RUN git clone https://github.com/camwebb/$APP_NAME.git && \
 cd $APP_NAME && \
-git checkout 8f8b5e2611b6fdef1998b7878e93e60a9bc7c130 && \
+git checkout 509cb5241d97d13cf254c01f202dcb3581c3cd53 && \
 make check && \
 make install
 
@@ -34,6 +34,6 @@ make install
 RUN install2.r --error \
 data.table
 
-RUN R -e "remotes::install_github('joelnitta/taxastand')"
+RUN R -e "remotes::install_github('joelnitta/taxastand@v0.0.0.9000')"
 
 WORKDIR /home/rstudio/
